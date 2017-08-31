@@ -1,11 +1,5 @@
 # UD Logfilter
->UD-Logfilter is a filter for database log. It uses psycopg2 to query a mock PostgreSQL database for a fictional news website. It will return:
->* What are the most popular three articles of all time if you run
-most_popular_three_article.py
->*  Who are the most popular article authors of all time if you run
-most_popular_author.py
->* On which days did more than 1% of requests lead to errors if you
-run error_ratio.py
+>UD-Logfilter is a filter for database log. It uses psycopg2 to query a mock PostgreSQL database for a fictional news website.
 ## How to use
 ### step 1
   Set up the vagrant, use the Vagrantfile provided
@@ -17,5 +11,7 @@ run error_ratio.py
 In vagrant terminal, pupular views by using this command:
 `psql -d news -f create_views.sql`
 ### step 4
-	In vagrant, $ python3 relace_with_your_dir/file_name
-	The output will be shown in terminal
+	In vargant termianl:
+>1. To display the three most viewed articles in the news database, run: `python3 most_popular_three_article.py`
+>2. To display the most popular article authors of all time, run:`pyhton3 most_popular_author.py`
+>3. To display on which days did more than 1% of requests lead to errors run: `python3 error_ratio.py`
