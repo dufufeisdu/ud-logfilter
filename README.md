@@ -11,10 +11,10 @@ run error_ratio.py
   Set up the vagrant, use the Vagrantfile provided
 ### step 2
   [Download data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
-	and unzip into the vagrant</br>
-  In vagrant Load data: `psql -d news -f newsdata.sql`
+	and unzip into the vagrant dir</br>
+  In vagrant terminal, load data by : `psql -d news -f newsdata.sql`
 ### step 3
-In terminal pupular views by using this command:
+In vagrant terminal, pupular views by using this command:
 `psql -d news -f create_views.sql`
 ### step 4
 	In vagrant, $ python3 relace_with_your_dir/file_name
