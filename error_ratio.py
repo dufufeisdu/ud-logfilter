@@ -23,4 +23,5 @@ def certain_error_req_day():
     return articles
 
 
-certain_error_req_day()
+if __name__ == '__main__':
+    certain_error_req_day()

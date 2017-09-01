@@ -23,4 +23,5 @@ def most_popular_author():
     return articles
 
 
-most_popular_author()
+if __name__ == '__main__':
+    most_popular_author()

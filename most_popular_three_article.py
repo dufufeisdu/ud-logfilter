@@ -20,4 +20,5 @@ def most_popular_three_aritcles():
         print('{0:<42}{1:<42}'.format(title, views))
 
 
-most_popular_three_aritcles()
+if __name__ == '__main__':
+    most_popular_three_aritcles()
