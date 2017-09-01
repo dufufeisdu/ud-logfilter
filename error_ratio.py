@@ -9,11 +9,12 @@ def certain_error_req_day():
     db = psycopg2.connect(database=DBNAME)
     c = db.cursor()
     c.execute("""select * from(select daily_error.daily as date,
-						round(100*daily_error.err_num::numeric/daily_request.num,2)::text||'%'
-						as error_rate
-						from daily_error,daily_request
-						where daily_error.daily=daily_request.daily) as foo
-						where error_rate>{}""".format(ERROR_PERCENT))
+                 round(100*daily_error.err_num::numeric/daily_request.num,2)::text||'%'
+                 as error_rate
+                 from daily_error,daily_request
+                 where daily_error.daily=daily_request.daily)
+                 as foo
+                 where error_rate>{}""".format(ERROR_PERCENT))
     column_names = tuple([desc[0] for desc in c.description])
     articles = c.fetchall()
     articles.insert(0, column_names)
