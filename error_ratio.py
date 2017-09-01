@@ -17,6 +17,7 @@ def certain_error_req_day():
                  where error_rate>{}""".format(ERROR_PERCENT))
     column_names = tuple([desc[0] for desc in c.description])
     articles = c.fetchall()
+    articles[0] = (articles[0][0].strftime('%m-%d-%Y'), articles[0][1])
     articles.insert(0, column_names)
     db.close()
     for date, ratio in articles:
