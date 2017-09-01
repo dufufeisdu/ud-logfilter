@@ -18,8 +18,8 @@ def certain_error_req_day():
     articles = c.fetchall()
     articles.insert(0, column_names)
     db.close()
-    for row in articles:
-        print('%-15s%-15s' % (row[0], row[1]))
+    for date, ratio in articles:
+        print('{0:<42}{1:<42}'.format(date, ratio))
     return articles
 
 

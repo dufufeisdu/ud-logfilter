@@ -16,8 +16,8 @@ def most_popular_three_aritcles():
     articles = c.fetchall()
     articles.insert(0, column_names)
     db.close()
-    for row in articles:
-        print('%-42s%-42s' % (row[0], row[1]))
+    for title, views in articles:
+        print('{0:<42}{1:<42}'.format(title, views))
 
 
 most_popular_three_aritcles()
