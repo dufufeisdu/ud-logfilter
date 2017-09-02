@@ -8,13 +8,13 @@ CREATE VIEW popularlog AS
 
 CREATE VIEW daily_request AS
 		SELECT count(*) AS num,
-		time:date AS daily
+		time::date AS daily
 		FROM log
 		GROUP BY daily
 		ORDER BY daily DESC;
 CREATE VIEW daily_error AS
 		SELECT count(*) AS err_num,
-		time:date AS daily
+		time::date AS daily
 		FROM log
 		WHERE log.status like '4%'
 		GROUP BY daily
